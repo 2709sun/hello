@@ -1,7 +1,7 @@
-import base
+from .base import Gravity_Object
 import pygame
 
-class Player(base.Gravity_Object):
+class Player(Gravity_Object):
     def __init__(self, *args):
         super().__init__(args)
 
