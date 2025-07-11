@@ -1,7 +1,7 @@
-import engines.engine as e
-import rooms.test_room as r
-import objects.player as p
-import displays.display as d
+import Game.engines.engine as e
+import Game.rooms.test_room as r
+import Game.objects.player as p
+import Game.displays.display as d
 import pygame
 
 pygame.init()

@@ -1,4 +1,4 @@
-from .base import Gravity_Object
+from Game.objects.base import Gravity_Object
 import pygame
 
 class Player(Gravity_Object):

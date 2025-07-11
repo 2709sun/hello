@@ -1,5 +1,3 @@
-import rooms
-import objects
 import pygame
 
 class Display:

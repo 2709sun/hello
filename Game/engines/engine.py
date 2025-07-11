@@ -1,10 +1,10 @@
-import displays.display
-import objects.player
-import rooms
+import Game.displays.display as d
+import Game.objects.player as p
+import Game.rooms.base as r
 import pygame
 
 class Engine():
-    def __init__(self, start_room:rooms.Room, display:displays.display.Display, player:objects.player.Player):
+    def __init__(self, start_room:r.Room, display:d.Display, player:p.Player):
         self.room = start_room
         self.display = display
         self.player = player
@@ -13,7 +13,7 @@ class Engine():
 
         self.all_sprites = pygame.sprite.Group(*self.room.platforms, self.player)
 
-    def move_room(self, room:rooms.Room):
+    def move_room(self, room:r.Room):
         self.room = room
 
     def play(self):
