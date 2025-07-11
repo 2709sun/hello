@@ -3,7 +3,7 @@ import pygame
 GRAVITY      = 0.5 #방에서 가져와서 구현할수도있음.
 MAX_FALL     = 15
 
-class Object:
+class Object(pygame.sprite.Sprite):
     def __init__(self, x, y, w, h, r, g, b, ms, js):
         super().__init__()
         self.image = pygame.Surface((w, h))
@@ -14,13 +14,6 @@ class Object:
         self.on_ground = False
         self.ms = ms
         self.js = js
-
-    def handle_input(self):
-        keys = pygame.key.get_pressed()
-        self.vel_x = (keys[pygame.K_RIGHT] - keys[pygame.K_LEFT]) * self.ms
-        if keys[pygame.K_SPACE] and self.on_ground:
-            self.vel_y = self.js
-            self.on_ground = False
    
 class GravityMixin:
     def apply_gravity(self):
