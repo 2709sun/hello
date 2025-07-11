@@ -3,7 +3,7 @@ import pygame
 
 class Player(Gravity_Object):
     def __init__(self, *args):
-        super().__init__(args)
+        super().__init__(*args)
 
     def handle_input(self):
             keys = pygame.key.get_pressed()

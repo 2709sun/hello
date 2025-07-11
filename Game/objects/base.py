@@ -14,10 +14,15 @@ class Object(pygame.sprite.Sprite):
         self.on_ground = False
         self.ms = ms
         self.js = js
-   
-class GravityMixin:
-    def apply_gravity(self):
-        self.vel_y = min(self.vel_y + GRAVITY, MAX_FALL)
 
-class Gravity_Object(Object, GravityMixin):
-    pass
+    def update(self, xy):
+        if xy=='x':
+            self.rect.x += self.vel_x
+        else:
+            self.rect.y += self.vel_y
+
+class Gravity_Object(Object):
+    def update(self, xy):
+        if xy=='y':
+            self.vel_y = min(self.vel_y + GRAVITY, MAX_FALL)
+        super().update(xy)
