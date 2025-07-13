@@ -40,7 +40,7 @@ class Engine():
 
     def collide(self, xy):
         if xy=='x':
-            hits = pygame.sprite.spritecollide(self.player, self.room.platforms, False)
+            hits = pygame.sprite.spritecollide(self.player, self.room.blocks, False)
             for plat in hits:
                 if self.player.vel_x > 0:
                     self.player.rect.right = plat.rect.left
@@ -48,7 +48,7 @@ class Engine():
                     self.player.rect.left  = plat.rect.right
         else:
             self.player.on_ground = False
-            hits = pygame.sprite.spritecollide(self.player, self.room.platforms, False)
+            hits = pygame.sprite.spritecollide(self.player, self.room.blocks, False)
             for plat in hits:
                 if self.player.vel_y > 0:  # 떨어지는 중
                     self.player.rect.bottom = plat.rect.top

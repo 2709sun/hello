@@ -1,7 +1,7 @@
 import pygame
 import os
 
-TILE_W, TILE_H = 32, 32
+TILE_W, TILE_H = 50, 50
 ASSET_DIR = os.path.abspath(
     os.path.join(os.path.dirname(__file__), "..", "assets", "blocks")
 )
