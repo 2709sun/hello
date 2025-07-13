@@ -1,7 +1,7 @@
 import pygame
 import os
 
-GRAVITY      = 0.5 #방에서 가져와서 구현할수도있음.
+GRAVITY      = 1 #방에서 가져와서 구현할수도있음.
 MAX_FALL     = 15
 
 class Object(pygame.sprite.Sprite):

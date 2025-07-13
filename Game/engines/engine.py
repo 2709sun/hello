@@ -41,11 +41,11 @@ class Engine():
     def collide(self, xy):
         if xy=='x':
             hits = pygame.sprite.spritecollide(self.player, self.room.blocks, False)
-            for plat in hits:
+            for block in hits:
                 if self.player.vel_x > 0:
-                    self.player.rect.right = plat.rect.left
+                    self.player.rect.right = block.rect.left
                 elif self.player.vel_x < 0:
-                    self.player.rect.left  = plat.rect.right
+                    self.player.rect.left  = block.rect.right
         else:
             self.player.on_ground = False
             hits = pygame.sprite.spritecollide(self.player, self.room.blocks, False)
@@ -56,7 +56,7 @@ class Engine():
                     self.player.on_ground = True
                 elif self.player.vel_y < 0:  # 점프해서 부딪힐 때
                     self.player.rect.top = plat.rect.bottom
-                    self.player.vel_y *= -1
+                    self.player.vel_y = 0
 
     def cooldown(self):
         pass

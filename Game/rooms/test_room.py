@@ -1,4 +1,4 @@
-from Game.rooms.base import Room, Platform, Block
+from Game.rooms.base import Room, Block
 import pygame
 
 class Test_Room(Room):
