@@ -5,9 +5,10 @@ import Game.displays.display as d
 import pygame
 
 pygame.init()
+display = d.Display(800, 600)
 player = p.Player(100, 100, 50, 50, 255, 100, 100, 5, -12)
 room = r.Test_Room()
-display = d.Display(800, 600)
+
 engine = e.Engine(room, display, player)
 
 engine.play()

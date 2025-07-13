@@ -11,7 +11,7 @@ class Engine():
         self.running = True
         self.clock  = pygame.time.Clock()
 
-        self.all_sprites = pygame.sprite.Group(*self.room.platforms, self.player)
+        self.all_sprites = pygame.sprite.Group(*self.room.platforms, *self.room.blocks, self.player)
 
     def move_room(self, room:r.Room):
         self.room = room
