@@ -28,16 +28,9 @@ class Block(pygame.sprite.Sprite):
         # 5) 위치·크기용 rect
         self.rect = self.image.get_rect(topleft=(x, y))
 
-
-class Platform(pygame.sprite.Sprite):
-    def __init__(self, x, y, w, h):
-        super().__init__()
-        self.image = pygame.Surface((w, h))
-        self.image.fill((100, 200, 100))
-        self.rect = self.image.get_rect(topleft=(x, y))
-
 class Room:
     def __init__(self):
-        self.platforms = pygame.sprite.Group()
+        self.xsize = 10
+        self.ysize = 10
         self.blocks = pygame.sprite.Group()
         pass

@@ -11,10 +11,12 @@ class Engine():
         self.running = True
         self.clock  = pygame.time.Clock()
 
-        self.all_sprites = pygame.sprite.Group(*self.room.platforms, *self.room.blocks, self.player)
+        self.display.screen = pygame.display.set_mode((50*self.room.xsize, 50*self.room.ysize))
+        self.all_sprites = pygame.sprite.Group(*self.room.blocks, self.player) #여기 나중에 투사체랑 적군(몬스터)도 추가될예정임.
 
     def move_room(self, room:r.Room):
         self.room = room
+        self.display.screen = pygame.display.set_mode((50*self.room.xsize, 50*self.room.ysize))
 
     def play(self):
         while self.running == True:
@@ -44,17 +46,19 @@ class Engine():
             for block in hits:
                 if self.player.vel_x > 0:
                     self.player.rect.right = block.rect.left
+                    self.player.vel_x = 0
                 elif self.player.vel_x < 0:
                     self.player.rect.left  = block.rect.right
+                    self.player.vel_x = 0
         else:
             self.player.on_ground = False
             hits = pygame.sprite.spritecollide(self.player, self.room.blocks, False)
             for plat in hits:
-                if self.player.vel_y > 0:  # 떨어지는 중
+                if self.player.vel_y > 0: 
                     self.player.rect.bottom = plat.rect.top
                     self.player.vel_y = 0
                     self.player.on_ground = True
-                elif self.player.vel_y < 0:  # 점프해서 부딪힐 때
+                elif self.player.vel_y < 0:
                     self.player.rect.top = plat.rect.bottom
                     self.player.vel_y = 0
 

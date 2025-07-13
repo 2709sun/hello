@@ -1,9 +1,10 @@
 from Game.rooms.base import Room, Block
-import pygame
 
 class Test_Room(Room):
     def __init__(self):
         super().__init__()
+        self.xsize = 18
+        self.ysize = 12
         self.blocks.add(
             Block(50, 50, 'grass'),
             Block(100, 50, 'grass'),
