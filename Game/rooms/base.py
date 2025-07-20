@@ -23,7 +23,7 @@ class Block(pygame.sprite.Sprite):
         cropped.blit(full_img, (0, 0), area=crop_rect)
 
         # 4) 이 cropped 을 실제로 사용할 image 로 지정
-        self.image = cropped
+        self.image = cropped #image가 Surface임.
 
         # 5) 위치·크기용 rect
         self.rect = self.image.get_rect(topleft=(x, y))

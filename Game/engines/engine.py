@@ -11,12 +11,12 @@ class Engine():
         self.running = True
         self.clock  = pygame.time.Clock()
 
-        self.display.screen = pygame.display.set_mode((50*self.room.xsize, 50*self.room.ysize))
+        self.display.setsize(self.room.xsize, self.room.ysize)
         self.all_sprites = pygame.sprite.Group(*self.room.blocks, self.player) #여기 나중에 투사체랑 적군(몬스터)도 추가될예정임.
 
     def move_room(self, room:r.Room):
         self.room = room
-        self.display.screen = pygame.display.set_mode((50*self.room.xsize, 50*self.room.ysize))
+        self.display.setsize(self.room.xsize, self.room.ysize)
 
     def play(self):
         while self.running == True:

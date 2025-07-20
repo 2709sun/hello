@@ -7,7 +7,7 @@ MAX_FALL     = 15
 class Object(pygame.sprite.Sprite):
     def __init__(self, x, y, w, h, r, g, b, ms, js):
         super().__init__()
-        self.image = pygame.Surface((w, h))
+        self.image = pygame.Surface((w, h)) #image가 Surface임.
         self.image.fill((r, g, b))
         self.rect = self.image.get_rect(topleft=(x, y)) #rect : x, y, w, h 들고있음.
         self.vel_x = 0
