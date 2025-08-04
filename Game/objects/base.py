@@ -48,7 +48,7 @@ class Animate:
         #self.rect_list = [
             #pygame.image.load(os.path.join(self.path, f"{i}_rect.png")).convert_alpha() for i in range(self.image_c)
         #]
-    def update(self, isbool:bool):
+    def update(self, isbool:bool=True):
         if isbool:
             self.current_tick += 1
             if self.current_tick == self.ticks:
