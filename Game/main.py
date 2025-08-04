@@ -5,6 +5,7 @@ import Game.displays.display as d
 import pygame
 
 pygame.init()
+screen = pygame.display.set_mode((800, 600))
 player = p.Player(100, 100, 50, 50, 255, 100, 100, 5, -12)
 display = d.Display(800, 600, player)
 room = r.Test_Room()
